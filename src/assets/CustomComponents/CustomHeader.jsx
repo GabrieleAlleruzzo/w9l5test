@@ -1,12 +1,13 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import NavDropdown from "react-bootstrap/NavDropdown";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { Col, Row } from "react-bootstrap";
+import "../CustomComponents/CustomStyle.css";
 
 function CustomHeader() {
   return (
-    <Navbar expand="lg" className="bg-black mb-5">
+    <Navbar expand="lg" className="bg-black mb-5 justify-content-center">
       <Container className=" m-0">
         <Navbar.Brand>
           <img
@@ -16,7 +17,7 @@ function CustomHeader() {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav ">
           <Nav className="me-auto">
             <Nav.Link className="text-white " href="#home">
               Home
@@ -33,19 +34,38 @@ function CustomHeader() {
             <Nav.Link className="text-white" href="#link">
               My List
             </Nav.Link>
-            {/*<NavDropdown className="text-white" title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>*/}
           </Nav>
         </Navbar.Collapse>
+        <span id="hide">
+          <Col className="d-flex flex-row gap-3 text-white">
+            <i className="bi bi-search"></i>
+            <p className="fw-bold text-end">kids</p>
+            <i className="bi bi-bell-fill"></i>
+            <img
+              src="public\kids_icon.png"
+              style={{ width: "25px", height: "25px" }}
+              alt="profile"
+            />
+            <NavDropdown
+              className="text-white bg-black"
+              title=""
+              id="basic-nav-dropdown"
+            >
+              <Nav.Link className="p-1 " href="#home">
+                Log out
+              </Nav.Link>
+              <Nav.Link className="p-1" href="#link">
+                Settings
+              </Nav.Link>
+              <Nav.Link className="p-1" href="#link">
+                Lorem
+              </Nav.Link>
+              <Nav.Link className="p-1" href="#link">
+                Ipsum
+              </Nav.Link>
+            </NavDropdown>
+          </Col>
+        </span>
       </Container>
     </Navbar>
   );
